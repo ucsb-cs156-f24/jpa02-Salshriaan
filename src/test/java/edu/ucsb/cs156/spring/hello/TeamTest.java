@@ -66,6 +66,24 @@ public class TeamTest {
         Team team8 = new Team("Team 8");
         team8.addMember("bob");
     }
+
+
+    @Test
+    public void hashcode_returns_correct_hashcode() {
+        Team team1 = new Team("Team 1");
+        team1.addMember("bob");
+
+        Team team2 = new Team("Team 1");
+        team2.addMember("bob");
+
+        assertEquals(team1.hashCode(), team2.hashCode(), "Two team objects with the same data should have the same hashcode.");
+        
+        Team team3 = new Team("Team 3");
+        team3.addMember("bob");
+        int result = team3.hashCode();
+        int expectedResult = -1793753132;
+        assertEquals(expectedResult, result);
+    }
    
     // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
     // 100% mutation coverage (all mutants timed out or killed)
