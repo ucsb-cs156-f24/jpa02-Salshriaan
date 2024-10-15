@@ -65,6 +65,16 @@ public class TeamTest {
 
         Team team8 = new Team("Team 8");
         team8.addMember("bob");
+
+
+        //different names and members
+        Team team9 = new Team("Team 9");
+        team9.addMember("bob");
+
+        Team team10 = new Team("Team 10");
+        team10.addMember("foo");
+
+        assertFalse(team9.equals(team10), "Two team objects with different data should not be equal.");
     }
 
 
